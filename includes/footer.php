@@ -1,16 +1,8 @@
 <?php require "Database.php";
 
-/*$analitics = Database::connect();
-$analitics = Database::loadAnalitics();*/
+
 
 ?>
-
-
-
-<!--Modal Window Converter-->
-
-<!-- Large modal -->
-
 
 <!-- Modal -->
 <div class="modal fade" id="converterBtn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -38,7 +30,7 @@ $analitics = Database::loadAnalitics();*/
 
 
                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                <div class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></div>
+                                <div class="input-group-addon"><i class="fa fa-users" aria-hidden="true"></i></div>
                                 <input type="text" class="form-control" id="name" name="name"
                                 >
                             </div>
@@ -131,12 +123,16 @@ $analitics = Database::loadAnalitics();*/
 
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
+
                 //var result = xhr.responseText;
+
                 var myObj = JSON.parse(xhr.responseText);
+                //console.log(result);
                 console.log(myObj);
                 if(myObj.hasOwnProperty('errors') && myObj.errors.length>0){
                     for(var i=0;i<myObj.errors.length;i++){
-                    document.getElementById("errors").innerHTML=myObj.errors[i]}
+                    document.getElementById("errors").innerHTML=myObj.errors[i];
+                    }
 
                 }else{
                     document.getElementById("eu").placeholder="result:"+myObj.EU;
@@ -146,10 +142,7 @@ $analitics = Database::loadAnalitics();*/
                 }
 
 
-
-
-
-            }
+           }
 
 
         };
