@@ -6,10 +6,6 @@ $analitics = Database::loadAnalitics();*/
 ?>
 
 
-<footer>
-
-    created by Gousopoulos Konstantinos
-</footer>
 
 <!--Modal Window Converter-->
 

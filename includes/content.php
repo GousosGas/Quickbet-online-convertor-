@@ -5,16 +5,15 @@
 ?>
 <!-- Page Content -->
 <div class="container">
-    <div class="row">
+    <div class="row welcome-text">
         <div class="col-lg-12 text-center">
-            <h1 class="mt-5">A Bootstrap 4 Starter Template</h1>
-            <p class="lead">Complete with pre-defined file paths and responsive navigation!</p>
-            <ul class="list-unstyled">
-                <li>Bootstrap 4.0.0-alpha.6</li>
-                <li>jQuery 3.2.1</li>
-            </ul>
+            <h1 class="mt-5">Welcome to QuickBetOnline</h1>
+
+
+            <p class="lead">Click the button and convert the bet odds!</p>
+
             <!-- Button trigger modal -->
-            <button class="btn btn-primary" data-toggle="modal" data-target="#converterBtn" >Large modal</button>
+            <button class="btn btn-outline-success" data-toggle="modal" data-target="#converterBtn" >Converter</button>
 
 
         </div>
