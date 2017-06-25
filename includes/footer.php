@@ -6,13 +6,6 @@ $analitics = Database::loadAnalitics();*/
 ?>
 
 
-<?php
-
-
-
-?>
-
-
 <footer>
 
     created by Gousopoulos Konstantinos
@@ -54,35 +47,34 @@ $analitics = Database::loadAnalitics();*/
                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                 <div class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></div>
                                 <input type="text" class="form-control" id="name" name="name"
-                                       placeholder="">
+                                >
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                 <div class="input-group-addon">UK</div>
-                                <input type="text" class="form-control" id="uk" name="uk-odd"
-                                       placeholder="">
+                                <input type="text" class="form-control" id="uk" name="uk-odd" placeholder="">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                 <div class="input-group-addon">EU</div>
-                                <input type="text" class="form-control" id="eu" name="eu-odd"
-                                       placeholder="">
+                                <input type="text" class="form-control" id="eu" name="eu-odd" placeholder=""
+                                >
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                 <div class="input-group-addon">US</div>
-                                <input type="text" class="form-control" id="us" name="us-odd"
-                                       placeholder="">
+                                <input type="text" class="form-control" id="us" name="us-odd" placeholder=""
+                                >
                             </div>
                         </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary"  onclick="refresh()">Refresh</button>
                     <button type="button" class="btn btn-primary" data-backdrop="static" id="ajax-submit"
                             onclick="converter()">Submit
                     </button>
@@ -106,6 +98,18 @@ $analitics = Database::loadAnalitics();*/
 <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <script>
+    /*var uk_value = document.getElementById('uk');
+     var eu_value = document.getElementById('eu');
+     var us_value = document.getElementById('uu');*/
+
+
+    function refresh() {
+        document.getElementById("eu").placeholder="";
+        document.getElementById("us").placeholder="";
+        document.getElementById("uk").placeholder="";
+        document.getElementById("name").placeholder="";
+
+    }
 
     //gather all the values from the form
     function gatherFormData() {
@@ -117,7 +121,7 @@ $analitics = Database::loadAnalitics();*/
             array.push(inputNameValue);
 
         }
-        //na do ti epistrefi i sinartisi
+
         return array.join('&')
     }
 
@@ -134,8 +138,17 @@ $analitics = Database::loadAnalitics();*/
 
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
-                alert(xhr.responseText);
+                //var result = xhr.responseText;
+                var myObj = JSON.parse(xhr.responseText);
+                console.log(myObj);
+                document.getElementById("eu").placeholder="result:"+myObj.EU;
+                document.getElementById("us").placeholder="result:"+myObj.US;
+                document.getElementById("uk").placeholder="result:"+myObj.UK;
+
+
             }
+
+
         };
         xhr.send(data);
 
