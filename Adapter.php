@@ -5,7 +5,15 @@ require "Database.php";
 
 class Adapter
 {
-    /*Adapter for choose the correct selection */
+    /***
+     *
+     * This function is used to access the correct method according to variables
+     * (Adapter Design pattern)
+     * @param $uk_odd
+     * @param $eu_odd
+     * @param $us_odd
+     * @return mixed
+     */
     public function oddsSelection($uk_odd, $eu_odd, $us_odd)
     {
 
@@ -19,7 +27,14 @@ class Adapter
 
     }
 
-    /*Adapter to store the values*/
+    /***
+     * This function is used to store user's information
+     * (Adapter Design pattern)
+     * @param $name
+     * @param $uk_odd
+     * @param $eu_odd
+     * @param $us_odd
+     */
     public function store($name, $uk_odd, $eu_odd, $us_odd)
     {
 
@@ -35,6 +50,11 @@ class Adapter
     }
 
 
+    /***
+     * method for selection of UK odds values
+     * @param $uk_odd
+     * @return mixed
+     */
     protected function ukOddSelection($uk_odd)
     {
 
@@ -48,6 +68,11 @@ class Adapter
 
     }
 
+    /***
+     * method for selection of EU odds values
+     * @param $eu_odd
+     * @return mixed
+     */
     protected function euOddSelection($eu_odd)
     {
         $pdo = Database::connect();
@@ -59,6 +84,12 @@ class Adapter
         return $data;
 
     }
+
+    /***
+     * method for selection of US odds values
+     * @param $us_odd
+     * @return mixed
+     */
 
     protected function usOddSelection($us_odd)
     {
@@ -73,6 +104,11 @@ class Adapter
     }
 
 
+    /***
+     * method for the track of EU odds values
+     * @param $eu_odd
+     * @param $name
+     */
     protected function euOddInsert($eu_odd, $name)
     {
         $pdo = Database::connect();
@@ -115,16 +151,17 @@ class Adapter
             $query->execute(array($eu_odd, $value_id, $user_id));
 
             Database::disconnect();
-        }/*else{
-            echo " error.<br>";
-            echo " the values user id is : $user_id.<br>";
-            echo " the values value id is : $value_id.<br>";
-        }*/
+        }
 
 
     }
 
-    public function ukOddInsert($uk_odd, $name)
+    /***
+     * method for the track of UK odds values
+     * @param $uk_odd
+     * @param $name
+     */
+    protected function ukOddInsert($uk_odd, $name)
     {
 
 
@@ -173,7 +210,11 @@ class Adapter
 
     }
 
-
+    /***
+     * method for the track of US odds values
+     * @param $us_odd
+     * @param $name
+     */
     protected function usOddInsert($us_odd, $name)
     {
 

@@ -15,6 +15,10 @@ class Database
         die("this is a static class and cant initialized");
     }
 
+    /***
+     * Database connection with PDO
+     * @return null|PDO
+     */
     public static function connect()
     {
 
@@ -30,25 +34,13 @@ class Database
 
     }
 
+    /**
+     * Database close connection
+     */
     public static function disconnect()
     {
         self::$connection = null;
     }
-
-
-    public static function loadAnalitics()
-    {
-        $query = self::$connection->query("select * from users JOIN history_values on users.userID=history_values.userID");
-
-        while ($row = $query->fetch()) {
-            $userId = $row['userID'];
-            $name = $row['name'];
-            $value = $row['value'];
-            echo $userId . ", " . $name . " has value " . $value . "<br>";
-
-        }
-    }
-
 
 
 }
