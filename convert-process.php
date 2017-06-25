@@ -12,42 +12,45 @@ $eu = $_POST['eu-odd'];
 $us = $_POST['us-odd'];
 
 
-
 $valueError = [];
 $valid = true;
 
 if (empty($name)) {
-    $valueError[] = "Please give your name";
+    $valueError[] = "Please give your name <br>";
+    $valueError[] = "<div class=\"alert alert-danger\" role=\"alert\">Please give your name.</div>";
     $valid = false;
 }
 
 if (!empty($uk) && !empty($eu) && !empty($us)) {
-    $valueError[]= "You gave more than one odd. please give one odd.<br>";
+    $valueError[] = "<div class=\"alert alert-danger\" role=\"alert\">Please give only one odd.</div>";
     $valid = false;
 
 }
 if (!empty($uk) && !empty($eu)) {
-    $valueError[] = "You gave more than one odd. please give one odd.<br>";
+    $valueError[] = "<div class=\"alert alert-danger\" role=\"alert\">Please give only one odd.</div>";
     $valid = false;
 
 }
 if (!empty($uk) && !empty($us)) {
-    $valueError[] = "You gave more than one odd. please give one odd.<br>";
+    $valueError[] = "<div class=\"alert alert-danger\" role=\"alert\">Please give only one odd.</div>";
     $valid = false;
 }
 
 
+if (empty($uk) && empty($us) && empty($eu) && empty($name)) {
+
+    $valueError[] = "<div class=\"alert alert-danger\" role=\"alert\">Please give your name and an odd.</div>";
+}
 if (empty($uk) && empty($us) && empty($eu)) {
 
-    $valueError[] = "Please give a value.<br>";
+    $valueError[] = "<div class=\"alert alert-danger\" role=\"alert\">Please give an odd.</div>";
 }
 
-if(!empty($valueError)){
-    $result_array = array('errors'=>$valueError);
+if (!empty($valueError)) {
+    $result_array = array('errors' => $valueError);
     echo json_encode($result_array);
     exit;
 }
-
 
 
 if ($valid) {
@@ -57,7 +60,7 @@ if ($valid) {
 
 
     if (is_ajax_request()) {
-        echo json_encode($data,JSON_PRETTY_PRINT);
+        echo json_encode($data, JSON_PRETTY_PRINT);
 
     } else {
         exit;

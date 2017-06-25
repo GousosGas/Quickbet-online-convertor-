@@ -29,10 +29,7 @@ $analitics = Database::loadAnalitics();*/
             </div>
             <div class="modal-body">
                 <div class="container">
-                    <div>
-
-                        <?php echo !empty($nameError) ? $nameError . '<br>' : '' ?>
-                        <?php echo !empty($valueError) ? $valueError . '<br>' : '' ?>
+                    <div id="errors">
 
                     </div>
 
@@ -141,9 +138,19 @@ $analitics = Database::loadAnalitics();*/
                 //var result = xhr.responseText;
                 var myObj = JSON.parse(xhr.responseText);
                 console.log(myObj);
-                document.getElementById("eu").placeholder="result:"+myObj.EU;
-                document.getElementById("us").placeholder="result:"+myObj.US;
-                document.getElementById("uk").placeholder="result:"+myObj.UK;
+                if(myObj.hasOwnProperty('errors') && myObj.errors.length>0){
+                    for(var i=0;i<myObj.errors.length;i++){
+                    document.getElementById("errors").innerHTML=myObj.errors[i]}
+
+                }else{
+                    document.getElementById("eu").placeholder="result:"+myObj.EU;
+                    document.getElementById("us").placeholder="result:"+myObj.US;
+                    document.getElementById("uk").placeholder="result:"+myObj.UK;
+
+                }
+
+
+
 
 
             }
