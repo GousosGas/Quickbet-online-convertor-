@@ -13,3 +13,16 @@ h1,p{
 .welcome-text{
     margin-top:150px;
 }
+
+.modal-logo{
+    position: relative;
+    width: 90px;
+}
+
+.modal-header{
+    background-color: #151616;
+    color: white;
+}
+
+.modal-title {
+    padding-right: 60px;}

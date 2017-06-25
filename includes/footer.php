@@ -10,7 +10,8 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Odds Convertor</h5>
+                <img src="http://localhost/quickbet/images/logo2.png" class="modal-logo" alt="">
+                <h3 class="modal-title" id="exampleModalLabel">Quick Bet Online Convertor</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -60,7 +61,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary"  onclick="refresh()">Refresh</button>
-                    <button type="button" class="btn btn-primary" data-backdrop="static" id="ajax-submit"
+                    <button type="button" class="btn btn-outline-success" data-backdrop="static" id="ajax-submit"
                             onclick="converter()">Submit
                     </button>
                 </div>
