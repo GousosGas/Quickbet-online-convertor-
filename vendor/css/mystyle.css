@@ -75,8 +75,6 @@ h1,p{
      bottom: 65px;
 }
 
-
-
 .modal-content{
     margin-right: 1px;
 }
@@ -88,7 +86,6 @@ h1,p{
     bottom: 40px;
 }
 
-
 .close {
     margin-right: 30px;
     margin-top: 13px;}
@@ -97,8 +94,6 @@ h1,p{
 
     content:url(../../images/close.png);
 }​
-
-
 
 @media (max-width: 966px) {
     .close{
@@ -110,4 +105,3 @@ h1,p{
 
     content:url(../../images/logo2.png);
 }​
-
