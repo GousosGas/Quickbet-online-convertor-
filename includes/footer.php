@@ -1,16 +1,30 @@
-<?php require "Database.php";?>
+<?php require "Database.php";
+
+
+
+?>
 
 <!-- Modal -->
-<div class="modal fade" id="converterBtn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade " id="converterBtn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
+
+
         <div class="modal-content">
+
+
             <div class="modal-header">
-                <img src="http://localhost/quickbet/images/logo2.png" class="modal-logo" alt="">
-                <h3 class="modal-title" id="exampleModalLabel">Quick Bet Online Convertor</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <img src="#" class="modal-logo" id="dices" alt="logo">
+                <h3 class="modal-title">Quick Bet Online Convertor</h3>
+
+                <div class="modal-button">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><img src="#" id="close-btn" ></span>
+                    </button>
+
+                </div>
+
+
             </div>
             <div class="modal-body">
                 <div class="container">
@@ -56,7 +70,7 @@
                         </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"  onclick="refresh()">Refresh</button>
+                    <button type="button" class="btn btn-secondary" onclick="refresh()">Refresh</button>
                     <button type="button" class="btn btn-outline-success" data-backdrop="static" id="ajax-submit"
                             onclick="converter()">Submit
                     </button>
@@ -78,7 +92,7 @@
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/tether/tether.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src ="vendor/jquery/myscript.js"></script>
+<script src="vendor/jquery/myscript.js"></script>
 
 </body>
 

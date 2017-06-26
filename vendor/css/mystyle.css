@@ -31,19 +31,83 @@ h1,p{
     color:#eceeef
 }
 
+.modal-header{
+
+    background-color: #222222;
+    color:#fff;
+    padding: 3px; !important;
+}
+
 .welcome-text{
     margin-top:150px;
 }
 
+.modal {
+     text-align: center;
+ }
+
+@media screen and (min-width: 768px) {
+    .modal:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+    }
+}
+
+/*center modal to page*/
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.modal-button{
+     -webkit-clip-path: polygon(33% 0, 100% 0, 100% 100%, 0% 100%);
+     clip-path: polygon(33% 0, 100% 0, 100% 100%, 0% 100%);
+     width: 115px;
+     position: relative;
+     z-index: -1;
+     background-color: #222222;
+     left: 3px;
+     height: 55px;
+     border-radius: 5px;
+     bottom: 65px;
+}
+
+
+
+.modal-content{
+    margin-right: 1px;
+}
+
 .modal-logo{
     position: relative;
-    width: 90px;
+    width: 110px;
+    z-index: 1;
+    bottom: 40px;
 }
 
-.modal-header{
-    background-color: #151616;
-    color: white;
+
+.close {
+    margin-right: 30px;
+    margin-top: 13px;}
+
+#close-btn{
+
+    content:url(../../images/close.png);
+}​
+
+
+
+@media (max-width: 966px) {
+    .close{
+        margin-right:26px;
+    }
 }
 
-.modal-title {
-    padding-right: 60px;}
+#dices{
+
+    content:url(../../images/logo2.png);
+}​
+
