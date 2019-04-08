@@ -2,7 +2,7 @@
 
 require "Database.php";
 
-
+/*Adapter design pattern*/
 class Adapter
 {
     /***
